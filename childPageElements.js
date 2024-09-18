@@ -13,6 +13,7 @@ message.style = `
   padding: 8px;
   background-color: #24292e;
   color: #fff;
+  border-radius: 4px;
   text-decoration: none;
   font-size: 12px;
   font-family: sans-serif;
