@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const repoName = location.pathname.split("/")[2];
+const repoName = location.pathname.split("/")[1];
 const message = document.createElement("a");
 message.href = `https://github.com/dg4-design/${repoName}`;
 message.textContent = "GitHub repository";
