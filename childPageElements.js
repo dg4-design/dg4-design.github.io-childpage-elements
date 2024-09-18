@@ -12,36 +12,44 @@ linkWrapper.style = `
 `;
 body.appendChild(linkWrapper);
 
+const createLink = ({ href, text, styles, ...rest }) => {
+  const link = document.createElement("a");
+  link.href = href;
+  link.textContent = text;
+  link.style = `
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: sans-serif;
+    ${styles}
+  `;
+  Object.assign(link, rest);
+  return link;
+};
+
 const hostName = location.hostname;
-const parentPageLink = document.createElement("a");
-parentPageLink.href = `https://${hostName}`;
-parentPageLink.textContent = "アプリ一覧へ";
-parentPageLink.style = `
-  padding: 8px;
-  background-color: #ffffff;
-  color: #24292e;
-  box-sizing: border-box;
-  border: 2px solid #24292e;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 12px;
-  font-family: sans-serif;
-`;
+const parentPageLink = createLink({
+  href: `https://${hostName}`,
+  text: "アプリ一覧へ",
+  styles: `
+    background-color: #ffffff;
+    color: #24292e;
+    box-sizing: border-box;
+    border: 2px solid #24292e;
+  `,
+});
 linkWrapper.appendChild(parentPageLink);
 
 const repoName = location.pathname.split("/")[1];
-const repoLink = document.createElement("a");
-repoLink.href = `https://github.com/dg4-design/${repoName}`;
-repoLink.textContent = "GitHub repository";
-repoLink.target = "_blank";
-repoLink.rel = "noopener noreferrer";
-repoLink.style = `
-  padding: 8px;
-  background-color: #24292e;
-  color: #fff;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 12px;
-  font-family: sans-serif;
-`;
+const repoLink = createLink({
+  href: `https://github.com/dg4-design/${repoName}`,
+  text: "GitHub repository",
+  styles: `
+    background-color: #24292e;
+    color: #fff;
+  `,
+  target: "_blank",
+  rel: "noopener noreferrer",
+});
 linkWrapper.appendChild(repoLink);
