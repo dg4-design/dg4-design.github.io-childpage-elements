@@ -4,6 +4,8 @@ const repoName = location.pathname.split("/")[1];
 const message = document.createElement("a");
 message.href = `https://github.com/dg4-design/${repoName}`;
 message.textContent = "GitHub repository";
+message.target = "_blank";
+message.rel = "noopener noreferrer";
 message.style = `
   position: fixed;
   bottom: 16px;
