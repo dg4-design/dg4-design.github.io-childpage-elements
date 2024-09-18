@@ -1,12 +1,12 @@
 const body = document.querySelector("body");
 
 const repoName = location.pathname.split("/")[1];
-const message = document.createElement("a");
-message.href = `https://github.com/dg4-design/${repoName}`;
-message.textContent = "GitHub repository";
-message.target = "_blank";
-message.rel = "noopener noreferrer";
-message.style = `
+const repoLink = document.createElement("a");
+repoLink.href = `https://github.com/dg4-design/${repoName}`;
+repoLink.textContent = "GitHub repository";
+repoLink.target = "_blank";
+repoLink.rel = "noopener noreferrer";
+repoLink.style = `
   position: fixed;
   bottom: 16px;
   right: 16px;
@@ -19,4 +19,4 @@ message.style = `
   font-family: sans-serif;
 `;
 
-body.appendChild(message);
+body.appendChild(repoLink);
