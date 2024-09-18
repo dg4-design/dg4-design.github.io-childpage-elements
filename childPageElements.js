@@ -1,11 +1,19 @@
-console.log("childPageElements.js");
-
 const body = document.querySelector("body");
-const message = document.createElement("div");
-message.textContent = "hello";
-message.style.color = "red";
-message.style.textAlign = "center";
-message.style.marginTop = "50px";
-body.appendChild(message);
 
-console.log("childPageElements.js end");
+const repoName = location.pathname.split("/")[2];
+const message = document.createElement("a");
+message.href = `https://github.com/dg4-design/${repoName}`;
+message.textContent = "GitHub repository";
+message.style = `
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  padding: 10px;
+  background-color: #24292e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: sans-serif;
+`;
+
+body.appendChild(message);
