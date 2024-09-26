@@ -44,12 +44,18 @@ linkWrapper.appendChild(parentPageLink);
 const repoName = location.pathname.split("/")[1];
 const repoLink = createLink({
   href: `https://github.com/dg4-design/${repoName}`,
-  text: "GitHub repository",
+  text: "",
   styles: `
-    background-color: #24292e;
-    color: #fff;
+    background-color: transparent;
+    padding: 0;
   `,
   target: "_blank",
   rel: "noopener noreferrer",
 });
+
+const repoImage = document.createElement("img");
+repoImage.alt = "GitHub last commit";
+repoImage.src = `https://img.shields.io/github/last-commit/dg4-design/${repoName}/main?style=for-the-badge&label=Repository&color=00d4d4&logo=github`;
+repoLink.appendChild(repoImage);
+
 linkWrapper.appendChild(repoLink);
