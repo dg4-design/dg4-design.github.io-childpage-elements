@@ -37,9 +37,7 @@ const parentPageLink = createLink({
     color: #24292e;
     box-sizing: border-box;
     border: 2px solid #24292e;
-    white-space: nowrap;
-    min-width: 0;
-    width: auto;
+    width: fit-content;
   `,
 });
 linkWrapper.appendChild(parentPageLink);
